@@ -23,9 +23,9 @@ class DrawingApp {
 
     resizeCanvas() {
         resizeCanvas() {
-        const prevData = this.canvas.toDataURL();  // Save the current canvas content as a data URL
+        const prevData = this.canvas.toDataURL();  
 
-        this.canvas.width = window.innerWidth;  // Resize the canvas to the new window size
+        this.canvas.width = window.innerWidth;  
         this.canvas.height = window.innerHeight;
 
         this.ctx.lineCap = 'round';
