@@ -34,10 +34,7 @@ class DrawingApp {
             this.ctx.drawImage(img, 0, 0);
         };
     }
-}
-
-    }
-
+    
     initControls() {
         this.controls = {
             undo: document.getElementById('undoCanvas'),
