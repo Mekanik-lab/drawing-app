@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Drawing App</title>
+</head>
+<body>
+    <div class="controls" id="controls">
+        <div class="controls-header">
+            <h2>Drawing Tools</h2>
+            <button id="toggleControls" aria-label="Toggle Controls Panel">
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div class="controls-content">
+            <div class="button-group">
+                <button id="undoCanvas" aria-label="Undo">↩ Undo</button>
+                <button id="redoCanvas" aria-label="Redo">↪ Redo</button>
+            </div>
+            <button id="clearCanvas" aria-label="Clear Canvas">Clear Canvas</button>
+            <button id="downloadCanvas" aria-label="Download Canvas">Download</button>
+            
+            <div class="control-group">
+                <label for="brushSize">Brush Size: <span id="brushSizeValue">5</span>px</label>
+                <input type="range" id="brushSize" min="1" max="50" value="5">
+            </div>
+            
+            <div class="control-group">
+                <label for="colorPicker">Brush Color:</label>
+                <div class="colorPickerWrapper">
+                    <input type="color" id="colorPicker" value="#ff0000">
+                    <div id="colorDisplay" class="colorDisplay"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info" id="info">
+        <div class="info-header">
+            <h2>Canvas Info</h2>
+            <button id="toggleInfo" aria-label="Toggle Info Panel">
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+        <div class="info-content"></div>
+    </div>
+
+    <canvas id="drawingCanvas" aria-label="Drawing Canvas"></canvas>
+    <script src="app.js"></script>
+</body>
+</html>
+
