@@ -22,20 +22,18 @@ class DrawingApp {
     }
 
     resizeCanvas() {
-        resizeCanvas() {
-        const prevData = this.canvas.toDataURL();  
-
-        this.canvas.width = window.innerWidth;  
+        const prevData = this.canvas.toDataURL();
+        this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
-
         this.ctx.lineCap = 'round';
         this.ctx.lineJoin = 'round';
-
+    
         const img = new Image();
-        img.src = prevData;  // Load the saved canvas content
+        img.src = prevData;
         img.onload = () => {
-        this.ctx.drawImage(img, 0, 0);  // Redraw the content onto the resized canvas
-    };
+            this.ctx.drawImage(img, 0, 0);
+        };
+    }
 }
 
     }
