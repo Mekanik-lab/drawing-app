@@ -22,10 +22,22 @@ class DrawingApp {
     }
 
     resizeCanvas() {
-        this.canvas.width = window.innerWidth;
+        resizeCanvas() {
+        const prevData = this.canvas.toDataURL();  // Save the current canvas content as a data URL
+
+        this.canvas.width = window.innerWidth;  // Resize the canvas to the new window size
         this.canvas.height = window.innerHeight;
+
         this.ctx.lineCap = 'round';
         this.ctx.lineJoin = 'round';
+
+        const img = new Image();
+        img.src = prevData;  // Load the saved canvas content
+        img.onload = () => {
+        this.ctx.drawImage(img, 0, 0);  // Redraw the content onto the resized canvas
+    };
+}
+
     }
 
     initControls() {
